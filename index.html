@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wien Reiseführer – 23.-26. September 2026</title>
+    <meta name="description" content="Personalisierter Reiseführer für Wien: Historische Stätten, traditionelle Küche und Insider-Tipps">
+    <meta property="og:title" content="Wien Reiseführer – September 2026">
+    <meta property="og:description" content="4 Tage Wien: Kaiserstadt, Wiener Schnitzel & Prater">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            /* Light mode (default) */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-gradient-start: #fff5f5;
+            --bg-gradient-end: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #555555;
+            --card-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.1);
+            --nav-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --accordion-bg: #f9f9f9;
+            --destination-accent: #c41e3a;
+            --destination-accent-light: #dc143c20;
+        }
+
+        [data-theme="dark"] {
+            /* Dark mode */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-gradient-start: #2a1a1a;
+            --bg-gradient-end: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --card-bg: #2d2d2d;
+            --shadow: rgba(0,0,0,0.5);
+            --nav-bg: #2d2d2d;
+            --border-color: #404040;
+            --accordion-bg: #252525;
+            --destination-accent: #e85d75;
+            --destination-accent-light: #e85d7520;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--destination-accent) 0%, #8b0000 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .trip-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trip-info-item {
+            background: rgba(255,255,255,0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--nav-bg);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px var(--shadow);
+            z-index: 100;
+            border-bottom: 3px solid var(--destination-accent);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--destination-accent-light);
+            color: var(--destination-accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--destination-accent);
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--destination-accent);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+            color: var(--destination-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            background: var(--destination-accent-light);
+            color: var(--destination-accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--destination-accent);
+            margin: 0.5rem 0;
+        }
+
+        .link-external {
+            color: var(--destination-accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .link-external:hover {
+            text-decoration: underline;
+        }
+
+        .link-external::after {
+            content: "↗";
+            font-size: 0.9rem;
+        }
+
+        .accordion {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .accordion-header {
+            background: var(--accordion-bg);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: var(--destination-accent-light);
+        }
+
+        .accordion-header::after {
+            content: "▼";
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+            padding: 1.5rem;
+        }
+
+        .day-plan {
+            background: var(--destination-accent-light);
+            padding: 1.5rem;
+            border-left: 5px solid var(--destination-accent);
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .day-plan h4 {
+            color: var(--destination-accent);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item {
+            padding: 0.8rem 0;
+            border-left: 3px solid var(--border-color);
+            padding-left: 1.5rem;
+            margin-left: 1rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "•";
+            position: absolute;
+            left: -8px;
+            color: var(--destination-accent);
+            font-size: 1.5rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--destination-accent);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--destination-accent);
+            color: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--destination-accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px var(--shadow);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            background: #8b0000;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s;
+            z-index: 98;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-4px) rotate(20deg);
+            border-color: var(--destination-accent);
+        }
+
+        .map-container {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .weather-info {
+            background: linear-gradient(135deg, #1e88e5 0%, #64b5f6 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .weather-info h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .highlight {
+            background: var(--destination-accent-light);
+            padding: 1.5rem;
+            border-left: 5px solid var(--destination-accent);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .trip-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media print {
+            nav, .filters, .back-to-top, .theme-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>🏛️ Wien Reiseführer</h1>
+        <p>Kaiserstadt, Kultur & Kulinarik</p>
+        <div class="trip-info">
+            <div class="trip-info-item">📅 23.-26. September 2026</div>
+            <div class="trip-info-item">⏱️ 4 Tage</div>
+            <div class="trip-info-item">🚂 Anreise per Zug</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#sehenswuerdigkeiten">Sehenswürdigkeiten</a></li>
+            <li><a href="#restaurants">Restaurants</a></li>
+            <li><a href="#aktivitaeten">Aktivitäten</a></li>
+            <li><a href="#maerkte">Märkte</a></li>
+            <li><a href="#geheimtipps">Geheimtipps</a></li>
+            <li><a href="#tagesplan">Tagesplan</a></li>
+            <li><a href="#praktisches">Praktisches</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Highlights Section -->
+        <section id="highlights">
+            <h2>⭐ Deine Must-See Highlights</h2>
+            <div class="highlight">
+                <h3>🎡 Prater mit Riesenrad</h3>
+                <p>Das berühmte Wiener Riesenrad (seit 1897) – Wahrzeichen der Stadt mit fantastischem Ausblick über Wien. Der Prater ist täglich 24/7 zugänglich, einzelne Attraktionen kosten extra (€3,50-€15).</p>
+            </div>
+            <div class="highlight">
+                <h3>🍖 Authentisches Wiener Schnitzel</h3>
+                <p>Traditionelles Kalbsschnitzel in einem der empfohlenen Gasthäuser genießen – ein absolutes Muss!</p>
+            </div>
+            <div class="highlight">
+                <h3>🚌 Hop-on Hop-off Bus</h3>
+                <p>Flexible Stadterkundung auf 4 Routen mit Audioguide in 19 Sprachen. Perfekt für den Überblick am ersten Tag!</p>
+            </div>
+        </section>
+
+        <!-- Sehenswürdigkeiten -->
+        <section id="sehenswuerdigkeiten">
+            <h2>🏛️ Historische Sehenswürdigkeiten</h2>
+
+            <div class="card">
+                <h4>⭐ Schloss Schönbrunn & Gärten</h4>
+                <div class="tags">
+                    <span class="tag">🎨 UNESCO Welterbe</span>
+                    <span class="tag">👨‍👩‍👧‍👦 Familienfreundlich</span>
+                    <span class="tag">✨ Auch an Feiertagen ruhig</span>
+                </div>
+                <p>Die prächtige Sommerresidenz der Habsburger mit 160 Hektar Parklandschaft, dem berühmten Irrgarten, der Gloriette und atemberaubendem Panoramablick.</p>
+                <p><strong>Öffnungszeiten:</strong> Täglich 8:30-17:30 Uhr (Schloss), Park 6:30-21:00 Uhr</p>
+                <p class="price">💶 Tickets: Classic Pass €44 (5 Attraktionen) | Einzelticket ab €28</p>
+                <p><strong>Empfohlene Besuchsdauer:</strong> 3-4 Stunden</p>
+                <p>⚠️ <strong>Wichtig:</strong> Tickets NUR über offizielle Kanäle kaufen: <a href="https://www.imperialtickets.com" target="_blank" class="link-external">imperialtickets.com</a></p>
+                <p>🗺️ <a href="https://www.schoenbrunn.at" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/schoenbrunn" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>⭐ Stephansdom (Stephanskirche)</h4>
+                <div class="tags">
+                    <span class="tag">⛪ Gotik-Meisterwerk</span>
+                    <span class="tag">🌊 Hohes Besucheraufkommen</span>
+                </div>
+                <p>Das Wahrzeichen Wiens im Herzen der Innenstadt. Der gotische Dom mit seinem markanten Turm bietet spektakuläre Aussichten über die Stadt.</p>
+                <p><strong>Öffnungszeiten:</strong> Mo-Sa 6:00-22:00 Uhr, So/Feiertage 7:00-22:00 Uhr<br>
+                <strong>Besichtigungen:</strong> Mo-Sa 9:00-11:30 & 13:00-16:30 Uhr, So 13:00-16:30 Uhr</p>
+                <p><strong>Turmbesteigung:</strong> Wunderbarer Ausblick über Wien</p>
+                <p><strong>Empfohlene Besuchsdauer:</strong> 1-2 Stunden</p>
+                <p>💡 <strong>Tipp:</strong> Früh morgens besuchen, um Menschenmassen zu vermeiden</p>
+                <p>🗺️ <a href="https://www.stephanskirche.at" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/stephansdom" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>⭐ Hofburg & Sisi Museum</h4>
+                <div class="tags">
+                    <span class="tag">👑 Kaiserliche Residenz</span>
+                    <span class="tag">🎨 Museum</span>
+                    <span class="tag">🌊 Hohes Besucheraufkommen</span>
+                </div>
+                <p>Über 600 Jahre lang Residenz der Habsburger. Das Sisi Museum zeigt persönliche Gegenstände der Kaiserin Elisabeth, dazu die prächtigen Kaiserlichen Appartements und die Silbersammlung.</p>
+                <p><strong>Öffnungszeiten:</strong> Täglich 9:00-17:30 Uhr (letzter Einlass 16:30 Uhr)</p>
+                <p class="price">💶 Tageskarte: Erwachsene €20 | Kinder €12 | Mit Führung: €25/€17</p>
+                <p><strong>Empfohlene Besuchsdauer:</strong> 2-3 Stunden</p>
+                <p>⚠️ <strong>Wichtig:</strong> Tickets ausschließlich über <a href="https://www.imperialtickets.com" target="_blank" class="link-external">imperialtickets.com</a> kaufen</p>
+                <p>🗺️ <a href="https://www.sisimuseum-hofburg.at" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/hofburg" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Belvedere Museum</h4>
+                <div class="tags">
+                    <span class="tag">🎨 Klimt's "Der Kuss"</span>
+                    <span class="tag">🏰 Barock-Palast</span>
+                </div>
+                <p>Barockes Schloss mit weltberühmter Kunstsammlung. Highlight: Gustav Klimts ikonisches Gemälde "Der Kuss" (1908/09). Die Sammlung umfasst 800 Jahre Kunstgeschichte.</p>
+                <p><strong>Öffnungszeiten:</strong> Oberes Belvedere 9-18 Uhr, Unteres Belvedere 10-18 Uhr</p>
+                <p><strong>Empfohlene Besuchsdauer:</strong> 2-3 Stunden</p>
+                <p>💡 <strong>Tipp:</strong> Das Obere Belvedere für Klimt, das Untere Belvedere für zeitgenössische Kunst</p>
+                <p>🗺️ <a href="https://www.belvedere.at" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/belvedere" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Albertina Museum</h4>
+                <div class="tags">
+                    <span class="tag">🎨 Grafik-Sammlung</span>
+                    <span class="tag">🖼️ Weltklasse</span>
+                </div>
+                <p>Die größte und wertvollste grafische Sammlung der Welt mit Werken von Dürer, Michelangelo, Rubens und der Moderne.</p>
+                <p><strong>Empfohlene Besuchsdauer:</strong> 2 Stunden</p>
+                <p>💡 <strong>Tipp:</strong> Tourist Info direkt am Albertinaplatz (täglich 9-18 Uhr)</p>
+                <p>🗺️ <a href="https://www.albertina.at" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/albertina" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+        </section>
+
+        <!-- Restaurants -->
+        <section id="restaurants">
+            <h2>🍽️ Restaurants & Wiener Küche</h2>
+
+            <h3>Authentisches Wiener Schnitzel</h3>
+
+            <div class="card">
+                <h4>⭐ Wiener Wiaz Haus</h4>
+                <div class="tags">
+                    <span class="tag">🍖 Österreichisch</span>
+                    <span class="tag">⭐ 4,8/5 (2.133 Bewertungen)</span>
+                    <span class="tag">🪑 Dine-in</span>
+                </div>
+                <p>Traditionelles Gasthaus mit ausgezeichneter lokaler Küche. Neben dem Wiener Schnitzel auch der berühmte Tafelspitz und Cordon Bleu.</p>
+                <p class="price">💶 Preisniveau: €€ - €€€ (€15-35 pro Person)</p>
+                <p><strong>Spezialitäten:</strong> Wiener Schnitzel, Tafelspitz, Cordon Bleu</p>
+                <p>💡 <strong>Tipp:</strong> Reservierung empfohlen!</p>
+                <p>🗺️ <a href="https://www.tripadvisor.com" target="_blank" class="link-external">TripAdvisor</a> | <a href="https://goo.gl/maps/wiazhaus" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>⭐ ef16 Restaurant</h4>
+                <div class="tags">
+                    <span class="tag">🍽️ Österreichisch/Europäisch</span>
+                    <span class="tag">⭐ 4,7/5 (3.479 Bewertungen)</span>
+                    <span class="tag">🪑 Dine-in</span>
+                </div>
+                <p>"Everything we had was excellent" – Modernes österreichisches Restaurant mit traditionellen Gerichten in zeitgemäßer Interpretation.</p>
+                <p class="price">💶 Preisniveau: €€ - €€€ (€20-40 pro Person)</p>
+                <p>💡 <strong>Tipp:</strong> Perfekt für ein gehobenes Abendessen</p>
+                <p>🗺️ <a href="https://www.tripadvisor.com" target="_blank" class="link-external">TripAdvisor</a> | <a href="https://goo.gl/maps/ef16" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Schachtelwirt</h4>
+                <div class="tags">
+                    <span class="tag">🍖 Österreichisch</span>
+                    <span class="tag">⭐ 4,6/5 (1.031 Bewertungen)</span>
+                    <span class="tag">💶 Budget-freundlich</span>
+                    <span class="tag">🪑 Dine-in</span>
+                </div>
+                <p>Schnellimbiss mit authentischer österreichischer Küche zu fairen Preisen. "Food, price, atmosphere top!"</p>
+                <p class="price">💶 Preisniveau: € (€8-15 pro Person)</p>
+                <p><strong>Spezialitäten:</strong> Schnelles, frisches Wiener Schnitzel</p>
+                <p>💡 <strong>Tipp:</strong> Ideal für ein schnelles Mittagessen ohne Reservierung</p>
+                <p>🗺️ <a href="https://www.tripadvisor.com" target="_blank" class="link-external">TripAdvisor</a> | <a href="https://goo.gl/maps/schachtelwirt" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Pürstner</h4>
+                <div class="tags">
+                    <span class="tag">🍖 Österreichisch</span>
+                    <span class="tag">⭐ 4,3/5 (3.999 Bewertungen)</span>
+                    <span class="tag">🪑 Dine-in</span>
+                </div>
+                <p>"The schnitzel and cordon bleu were amazing" – Beliebtes Restaurant mit großartiger Auswahl an traditionellen Gerichten.</p>
+                <p class="price">💶 Preisniveau: €€ (€15-30 pro Person)</p>
+                <p>🗺️ <a href="https://www.tripadvisor.com" target="_blank" class="link-external">TripAdvisor</a> | <a href="https://goo.gl/maps/puerstner" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <h3>Traditionelle Kaffeehäuser</h3>
+
+            <div class="card">
+                <h4>⚠️ Café Central (GESCHLOSSEN)</h4>
+                <div class="tags">
+                    <span class="tag">☕ Historisches Kaffeehaus</span>
+                    <span class="tag">❌ Renovierung</span>
+                </div>
+                <p>Das legendäre Café Central (150 Jahre alt!) wird gerade renoviert und ist <strong>voraussichtlich im Herbst 2026 wieder geöffnet</strong>. Während deines Besuchs im September könnte es knapp werden!</p>
+                <p><strong>Alternative:</strong> DECENTRAL (Freyung 3, täglich 7:30-22 Uhr) – Schwester-Café mit Patisserie & Drinks</p>
+                <p>🗺️ <a href="https://www.cafecentral.wien" target="_blank" class="link-external">Offizielle Website</a> (für Updates zur Wiedereröffnung)</p>
+            </div>
+        </section>
+
+        <!-- Aktivitäten -->
+        <section id="aktivitaeten">
+            <h2>🎡 Aktivitäten & Erlebnisse</h2>
+
+            <div class="card">
+                <h4>⭐ Wiener Riesenrad im Prater</h4>
+                <div class="tags">
+                    <span class="tag">🎡 Wahrzeichen</span>
+                    <span class="tag">📸 Fotomotiv</span>
+                    <span class="tag">👨‍👩‍👧‍👦 Familienfreundlich</span>
+                </div>
+                <p>Das älteste Riesenrad der Welt (seit 1897) mit spektakulärem 360°-Blick über Wien aus 65 Metern Höhe.</p>
+                <p><strong>Öffnungszeiten:</strong> Ganzjährig geöffnet (spezifische Zeiten auf Website prüfen)</p>
+                <p class="price">💶 Eintritt Prater: Frei | Riesenrad & Attraktionen: €3,50-€15 pro Fahrt</p>
+                <p><strong>Ticketoptionen:</strong> Einzeltickets, FlexTickets (1 Jahr gültig), Wien Pass: Freier Eintritt</p>
+                <p>💡 <strong>Tipp:</strong> Besonders schön bei Sonnenuntergang! Der Prater selbst ist 24/7 zugänglich.</p>
+                <p>🗺️ <a href="https://www.wienerriesenrad.com" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/riesenrad" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>⭐ Hop-on Hop-off Bus Tour</h4>
+                <div class="tags">
+                    <span class="tag">🚌 Stadtrundfahrt</span>
+                    <span class="tag">🎧 19 Sprachen</span>
+                    <span class="tag">👨‍👩‍👧‍👦 Familienfreundlich</span>
+                </div>
+                <p><strong>Vienna Sightseeing</strong> – Marktführer mit über 50 Jahren Erfahrung. 4 Routen (Blau, Gelb, Grün, Rot) zu allen wichtigen Sehenswürdigkeiten mit Audioguide.</p>
+                <p><strong>Ticketpreise:</strong></p>
+                <ul>
+                    <li>24 Stunden: Erwachsene €39 | Kinder €23 | Familie (2+2) €109</li>
+                    <li>48 Stunden: Erwachsene €45 | Kinder €27 | Familie €119</li>
+                    <li>72 Stunden: Erwachsene €53 | Kinder €28 | Familie €139</li>
+                </ul>
+                <p>💡 <strong>Aktueller Rabatt:</strong> 12% auf alle Tickets über Vienna Music Discount</p>
+                <p><strong>Features:</strong> App mit geführten Spaziergängen, Live-Bus-Tracking, kostenlose Stornierung</p>
+                <p>💡 <strong>Tipp:</strong> Am ersten Tag (Ankunft 16 Uhr) für den Überblick nutzen!</p>
+                <p>🗺️ <a href="https://www.viennasightseeing.at" target="_blank" class="link-external">Offizielle Website & Buchung</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Spaziergang durch die Altstadt</h4>
+                <div class="tags">
+                    <span class="tag">🚶‍♀️ Kostenlos</span>
+                    <span class="tag">🏛️ UNESCO Welterbe</span>
+                    <span class="tag">📸 Fotogen</span>
+                </div>
+                <p>Die Wiener Innenstadt (1. Bezirk) ist UNESCO-Welterbe und perfekt zu Fuß erkundbar. Vom Stephansdom durch die Kärntner Straße zur Hofburg.</p>
+                <p><strong>Empfohlene Dauer:</strong> 2-3 Stunden</p>
+                <p><strong>Route:</strong> Stephansdom → Graben → Kohlmarkt → Hofburg → Heldenplatz → Ringstraße</p>
+                <p>💡 <strong>Tipp:</strong> Früh morgens oder abends für romantische Stimmung und weniger Menschenmassen</p>
+            </div>
+        </section>
+
+        <!-- Märkte -->
+        <section id="maerkte">
+            <h2>🛍️ Traditionelle Märkte</h2>
+
+            <div class="card">
+                <h4>⭐ Naschmarkt</h4>
+                <div class="tags">
+                    <span class="tag">🥘 Kulinarik</span>
+                    <span class="tag">🌍 International</span>
+                    <span class="tag">🎪 Flohmarkt (Sa)</span>
+                </div>
+                <p>Wiens berühmtester Markt mit internationalen Spezialitäten, frischem Obst, Gemüse, Gewürzen und vielen Restaurants & Cafés.</p>
+                <p><strong>Öffnungszeiten:</strong> Details auf Website prüfen</p>
+                <p><strong>Was gibt es:</strong></p>
+                <ul>
+                    <li>Frische Lebensmittel & exotische Gewürze</li>
+                    <li>Restaurants von traditionell österreichisch bis international</li>
+                    <li>Essen zum Mitnehmen</li>
+                    <li><strong>Samstags:</strong> Großer Flohmarkt mit Antiquitäten & Schätzen</li>
+                </ul>
+                <p>💡 <strong>Tipp:</strong> Am Wochenende kommen, um den Flohmarkt zu erleben. Mit der U-Bahn anreisen (Straßen rundherum sind überfüllt).</p>
+                <p>🗺️ <a href="https://www.naschmarkt-vienna.com" target="_blank" class="link-external">Offizielle Website</a> | <a href="https://goo.gl/maps/naschmarkt" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Spittelberg</h4>
+                <div class="tags">
+                    <span class="tag">🏘️ Biedermeier-Viertel</span>
+                    <span class="tag">🍽️ Gastronomie</span>
+                </div>
+                <p>Revitalisiertes historisches Viertel nahe dem MuseumsQuartier mit charmanten Gassen, Boutiquen und zahlreichen Restaurants.</p>
+                <p><strong>Besonderheit:</strong> Authentisches Wiener Flair abseits der Touristenpfade</p>
+                <p>💡 <strong>Tipp:</strong> Perfekt für ein gemütliches Abendessen in entspannter Atmosphäre</p>
+                <p>🗺️ <a href="https://goo.gl/maps/spittelberg" target="_blank" class="link-external">Google Maps</a></p>
+            </div>
+        </section>
+
+        <!-- Geheimtipps -->
+        <section id="geheimtipps">
+            <h2>💎 Geheimtipps & Insider</h2>
+
+            <div class="card">
+                <h4>Wiener Heurige</h4>
+                <div class="tags">
+                    <span class="tag">🍷 Weinkultur</span>
+                    <span class="tag">🎶 Tradition</span>
+                    <span class="tag">✨ Lokal</span>
+                </div>
+                <p>Traditionelle Wiener Weinstuben in den Weinbergen von Grinzing, Nussdorf oder Neustift. Hier genießen Einheimische den "Heurigen" (jungen Wein) mit kaltem Buffet.</p>
+                <p><strong>Besonderheit:</strong> Authentisches Wien-Erlebnis mit Live-Musik (Schrammelmusik)</p>
+                <p>💡 <strong>Tipp:</strong> Abends in die Weinberge fahren, lokale Atmosphäre genießen</p>
+                <p>🗺️ <a href="https://www.wien.info" target="_blank" class="link-external">Mehr Infos</a></p>
+            </div>
+
+            <div class="card">
+                <h4>Donauinsel & Alte Donau</h4>
+                <div class="tags">
+                    <span class="tag">🌲 Natur</span>
+                    <span class="tag">🚴 Radweg</span>
+                    <span class="tag">✨ Ruhig</span>
+                </div>
+                <p>42 km lange Insel mitten in Wien – perfekt zum Radfahren, Spazieren oder am Wasser entspannen. Wenig Touristen, dafür viele Wiener!</p>
+                <p>💡 <strong>Tipp:</strong> Fahrrad leihen und die Insel erkunden, besonders schön bei schönem Wetter im September</p>
+            </div>
+
+            <div class="card">
+                <h4>MuseumsQuartier</h4>
+                <div class="tags">
+                    <span class="tag">🎨 Kultur</span>
+                    <span class="tag">☕ Café-Kultur</span>
+                    <span class="tag">✨ Entspannt</span>
+                </div>
+                <p>Eines der größten Kulturareale der Welt mit Museen, Cafés und öffentlichen Sitzgelegenheiten. Perfekter Ort zum Verweilen.</p>
+                <p>💡 <strong>Tipp:</strong> Kostenlos auf den bunten Möbeln im Innenhof entspannen und das kreative Flair genießen</p>
+                <p>🗺️ <a href="https://www.mqw.at" target="_blank" class="link-external">Offizielle Website</a></p>
+            </div>
+        </section>
+
+        <!-- Tagesplan -->
+        <section id="tagesplan">
+            <h2>📅 4-Tage Tagesplan</h2>
+
+            <div class="accordion">
+                <div class="accordion-header">Tag 1 – Montag, 23. September (Ankunftstag)</div>
+                <div class="accordion-content">
+                    <div class="timeline-item">
+                        <strong>16:00 Uhr – Ankunft Wien Hauptbahnhof</strong><br>
+                        Check-in im Hotel, frisch machen
+                    </div>
+                    <div class="timeline-item">
+                        <strong>17:30 Uhr – Erste Erkundung</strong><br>
+                        Spaziergang durch die Innenstadt: Kärntner Straße → Stephansdom (von außen)<br>
+                        💡 Abendstimmung genießen, erste Eindrücke sammeln
+                    </div>
+                    <div class="timeline-item">
+                        <strong>19:00 Uhr – Abendessen</strong><br>
+                        🍖 <strong>Wiener Wiaz Haus</strong> oder <strong>Pürstner</strong> – Erstes authentisches Wiener Schnitzel!<br>
+                        ⚠️ Reservierung empfohlen
+                    </div>
+                    <div class="timeline-item">
+                        <strong>21:00 Uhr – Entspannen</strong><br>
+                        Gemütlicher Abendspaziergang oder zurück zum Hotel
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Tag 2 – Dienstag, 24. September</div>
+                <div class="accordion-content">
+                    <div class="timeline-item">
+                        <strong>09:00 Uhr – Hop-on Hop-off Tour starten</strong><br>
+                        🚌 24h-Ticket kaufen, Überblick über die Stadt gewinnen<br>
+                        Route: Alle 4 Linien kennenlernen, an interessanten Spots aussteigen
+                    </div>
+                    <div class="timeline-item">
+                        <strong>12:30 Uhr – Mittagessen</strong><br>
+                        🥘 <strong>Schachtelwirt</strong> – Schnelles, günstiges Mittagessen<br>
+                        Alternative: <strong>Naschmarkt</strong> für internationale Snacks
+                    </div>
+                    <div class="timeline-item">
+                        <strong>14:00 Uhr – Schloss Schönbrunn</strong><br>
+                        🏰 Besichtigung Schloss + Gärten + Gloriette (Classic Pass €44)<br>
+                        💡 3-4 Stunden einplanen, entspannt durch die Gärten schlendern
+                    </div>
+                    <div class="timeline-item">
+                        <strong>18:30 Uhr – Abendessen</strong><br>
+                        🍽️ <strong>ef16 Restaurant</strong> – Gehobenes österreichisches Dinner<br>
+                        Alternative: Restaurant in Spittelberg (gemütliches Biedermeier-Viertel)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Tag 3 – Mittwoch, 25. September</div>
+                <div class="accordion-content">
+                    <div class="timeline-item">
+                        <strong>09:00 Uhr – Stephansdom Besichtigung</strong><br>
+                        ⛪ Innenbesichtigung + Turmbesteigung für Panoramablick<br>
+                        💡 Früh da sein, um Menschenmassen zu vermeiden
+                    </div>
+                    <div class="timeline-item">
+                        <strong>11:00 Uhr – Hofburg & Sisi Museum</strong><br>
+                        👑 Kaiserliche Appartements, Sisi Museum, Silbersammlung (€20)<br>
+                        💡 2-3 Stunden einplanen
+                    </div>
+                    <div class="timeline-item">
+                        <strong>13:30 Uhr – Mittagspause</strong><br>
+                        ☕ <strong>DECENTRAL</strong> (Café Central Alternative) für Kaffee & Kuchen<br>
+                        Oder schneller Snack am Naschmarkt
+                    </div>
+                    <div class="timeline-item">
+                        <strong>15:00 Uhr – Belvedere Museum</strong><br>
+                        🎨 Klimts "Der Kuss" & barocke Gärten<br>
+                        💡 2 Stunden einplanen
+                    </div>
+                    <div class="timeline-item">
+                        <strong>18:00 Uhr – Naschmarkt erkunden</strong><br>
+                        🛍️ Durch den Markt schlendern, internationale Küche probieren<br>
+                        💡 Viele Restaurants für Abendessen zur Auswahl
+                    </div>
+                    <div class="timeline-item">
+                        <strong>20:00 Uhr – Abendessen am Naschmarkt</strong><br>
+                        🌍 Internationale Küche oder österreichische Spezialitäten
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Tag 4 – Donnerstag, 26. September (Abreisetag)</div>
+                <div class="accordion-content">
+                    <div class="timeline-item">
+                        <strong>08:00 Uhr – Frühstück im Hotel</strong><br>
+                        Gemütlich starten
+                    </div>
+                    <div class="timeline-item">
+                        <strong>09:00 Uhr – Prater & Riesenrad</strong><br>
+                        🎡 Fahrt mit dem Wiener Riesenrad (letztes Highlight!)<br>
+                        Spaziergang durch den Prater<br>
+                        💡 Genug Zeit für Rückfahrt zum Hotel einplanen
+                    </div>
+                    <div class="timeline-item">
+                        <strong>10:30 Uhr – Abreise vom Hauptbahnhof</strong><br>
+                        🚂 Rückreise
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Praktisches -->
+        <section id="praktisches">
+            <h2>🧳 Praktische Hinweise</h2>
+
+            <div class="weather-info">
+                <h3>🌡️ Wetter im September</h3>
+                <p><strong>Durchschnittstemperaturen:</strong> 15-22°C (angenehm mild)</p>
+                <p><strong>Klima:</strong> Frühherbst, meist sonnig mit gelegentlichen Regenschauern</p>
+                <p><strong>Packliste:</strong></p>
+                <ul>
+                    <li>Leichte Jacke oder Pullover für abends</li>
+                    <li>Bequeme Wanderschuhe (viel zu Fuß unterwegs!)</li>
+                    <li>Regenschirm/Regenjacke (Vorsicht)</li>
+                    <li>Sonnenschutz (Sonnenbrille, Sonnencreme)</li>
+                </ul>
+                <p>💡 <strong>September ist eine der besten Reisezeiten für Wien!</strong> Weniger Touristen als im Sommer, angenehme Temperaturen.</p>
+            </div>
+
+            <div class="card">
+                <h4>🚇 Transport in Wien</h4>
+                <p><strong>Öffentliche Verkehrsmittel:</strong> U-Bahn, Straßenbahn, Bus (hervorragend ausgebaut)</p>
+                <p><strong>Tickets:</strong></p>
+                <ul>
+                    <li>72-Stunden-Ticket: €17,10 (perfekt für 4 Tage)</li>
+                    <li>Einzelticket: €2,40</li>
+                    <li>Tickets in Trafiken, an Automaten oder per App (WienMobil)</li>
+                </ul>
+                <p>💡 <strong>Tipp:</strong> Die Wiener Linien App herunterladen für Routenplanung</p>
+                <p>🗺️ <a href="https://www.wienerlinien.at" target="_blank" class="link-external">Wiener Linien</a></p>
+            </div>
+
+            <div class="card">
+                <h4>💳 Geld & Bezahlen</h4>
+                <p><strong>Währung:</strong> Euro (€)</p>
+                <p><strong>Kartenzahlung:</strong> Weit verbreitet, aber nicht überall (v.a. kleine Cafés/Märkte bevorzugen Bargeld)</p>
+                <p>💡 <strong>Tipp:</strong> Immer etwas Bargeld dabeihaben</p>
+            </div>
+
+            <div class="card">
+                <h4>📱 Nützliche Apps</h4>
+                <ul>
+                    <li><strong>WienMobil:</strong> Öffi-Tickets & Routenplaner</li>
+                    <li><strong>ivie:</strong> Offizieller Wien-Guide mit Tipps & Events</li>
+                    <li><strong>Google Maps:</strong> Navigation & Bewertungen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>🎟️ Ticket-Tipps</h4>
+                <p>⚠️ <strong>Wichtig:</strong> Tickets für Schloss Schönbrunn und Hofburg <strong>NUR</strong> über offizielle Kanäle kaufen!</p>
+                <p>✅ <strong>Offizielle Ticketseite:</strong> <a href="https://www.imperialtickets.com" target="_blank" class="link-external">imperialtickets.com</a></p>
+                <p>💡 <strong>Wien Pass:</strong> Falls ihr viele Museen besuchen wollt, lohnt sich der Wien Pass (freier Eintritt + Hop-on Hop-off inklusive)</p>
+            </div>
+
+            <div class="card">
+                <h4>🗣️ Sprache</h4>
+                <p><strong>Amtssprache:</strong> Deutsch (Wiener Dialekt)</p>
+                <p><strong>Englisch:</strong> Weit verbreitet in Hotels, Restaurants und touristischen Orten</p>
+                <p>💡 <strong>Typisch Wienerisch:</strong></p>
+                <ul>
+                    <li>"Grüß Gott" (Guten Tag)</li>
+                    <li>"Bitte schön" (Gerne/Bitte)</li>
+                    <li>"Ein Achterl" (1/8 Liter Wein im Heurigen)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Karte -->
+        <section id="karte">
+            <h2>🗺️ Karte der Sehenswürdigkeiten</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1example&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p>💡 <strong>Hinweis:</strong> Alle Sehenswürdigkeiten sind per Google Maps leicht zu finden – einfach den Namen suchen!</p>
+        </section>
+
+        <!-- Quellen -->
+        <section id="quellen">
+            <h2>📚 Quellen</h2>
+            <ul>
+                <li><a href="https://www.wien.info" target="_blank" class="link-external">Wien.info</a> – Offizielle Tourismus-Website</li>
+                <li><a href="https://www.schoenbrunn.at" target="_blank" class="link-external">Schloss Schönbrunn</a> – Offizielle Website</li>
+                <li><a href="https://www.sisimuseum-hofburg.at" target="_blank" class="link-external">Hofburg & Sisi Museum</a></li>
+                <li><a href="https://www.belvedere.at" target="_blank" class="link-external">Belvedere Museum</a></li>
+                <li><a href="https://www.wienerriesenrad.com" target="_blank" class="link-external">Wiener Riesenrad</a></li>
+                <li><a href="https://www.praterwien.com" target="_blank" class="link-external">Prater Wien</a></li>
+                <li><a href="https://www.viennasightseeing.at" target="_blank" class="link-external">Vienna Sightseeing (Hop-on Hop-off)</a></li>
+                <li><a href="https://www.tripadvisor.com" target="_blank" class="link-external">TripAdvisor</a> – Restaurant-Bewertungen</li>
+                <li><a href="https://www.cafecentral.wien" target="_blank" class="link-external">Café Central</a></li>
+                <li><a href="https://www.naschmarkt-vienna.com" target="_blank" class="link-external">Naschmarkt</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="Dark/Light Mode umschalten">
+        <span class="icon" id="theme-icon">🌙</span>
+    </button>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const themeIcon = document.getElementById('theme-icon');
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Load saved theme on page load
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const themeIcon = document.getElementById('theme-icon');
+
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        })();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
